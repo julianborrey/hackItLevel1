@@ -1,6 +1,7 @@
 # HackIt - Level 1 #
 
 This is a very small Rails app designed to be hacked for fun.
+The app is at (this URL)[http://hackitlevel1.projectcaptivate.org].
 
 There are 2 tasks:
 
