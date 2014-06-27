@@ -12,7 +12,10 @@ The code is in this repo, so if you really want a hint you can look at it
 
 Some hints are in the website anyway.
 
-Also - to just save you some time, there is no XSS or sanitation breaking in this round.
+A good rule of advice is to consider all the resources the website sends 
+to you and what resources the website might be using.
+
+Also, to just save you some time, there is no XSS or sanitation breaking in this round.
 Probably in level 2 though.
 
 Have fun!
