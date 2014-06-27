@@ -1,0 +1,60 @@
+<div class="pageDiv">
+
+<% if cookies[:user_type].to_i == 1 %>
+   <h1>Update Currency Rate</h1>
+   
+   <%= form_tag do %>
+      <%= number_field(:rate, "Rate", {step: 0.01}); %>
+      <%= submit_tag("Update"); %>
+   <% end %>
+   
+   <div>
+      <%= @msg %>
+   </div>
+   
+   <br><br>
+   <%= link_to "Converter", converter_path %>
+      
+<% else %>
+   <h1>Admin Login</h1>
+   
+   Username: <input type="text"></input>
+   Password: <input type="text"></input>
+   <button>Login</button>
+   <!-- notice this button submits nothing -->
+   
+   <br><br>
+   <h3>You are close...</h3>
+   Now you have to fiddle with some things...
+   
+   <p id="hintBtn1">A hint</p>
+   <div id="hint1" style="display:none;">
+      <i>
+         731163211911111710810032981013211711510110211710832116111321001
+         1111911010811197100329732671041141111091013210112011610
+         1110115105111110329997108108101100326910010511684104105
+         11567111111107105101324011111432115111109101116104105
+         11010332115105109105108971144146
+      </i>
+   </div>
+   <script>
+      $("#hintBtn1").on("click", function(){
+         $("#hint1").toggle();
+      });
+   </script>
+   
+   <p id="hintBtn2">A big hint</p>
+   <div id="hint2" style="display:none;">
+      <i>
+         char c = (char) x;
+      </i>
+   </div>
+   <script>
+      $("#hintBtn2").on("click", function(){
+         $("#hint2").toggle();
+      });
+   </script>   
+   
+<% end %>
+
+</div>

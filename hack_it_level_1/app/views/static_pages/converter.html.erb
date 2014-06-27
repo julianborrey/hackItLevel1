@@ -1,0 +1,48 @@
+<div class="pageDiv">
+
+   <h1>AUD <-> USD Currency Converter</h1>
+      <%= link_to "Home", root_path %>
+   <br><br><br>
+   
+<div style="text-align:left">
+   <b>Input AUD and hit enter</b>
+   <br>
+
+   
+   <input type="number" id="aud" step="0.1"></input>
+   <button id="btn">Go!</button>
+   <br><br>
+   
+   <b>USD:</b>
+   <div id="answer">
+   </div>
+   
+   <p id="hintBtn1">A hint</p>
+   <div id="hint1" style="display:none;">
+      <i>Hmm, the administrator of the site could really help here...</i>
+   </div>
+   <script>
+      $("#hintBtn1").on("click", function(){
+         $("#hint1").toggle();
+      });
+   </script>
+   
+   <p id="hintBtn2">A big hint</p>
+   <div id="hint2" style="display:none;">
+      <i>I bet the administrator has some sort of login which they use to 
+      edit the site.</i>
+   </div>
+   <script>
+      $("#hintBtn2").on("click", function(){
+         $("#hint2").toggle();
+      });
+   </script>
+   
+   <script>
+      $("#btn").on("click", function(){
+         var aud = $("#aud").val()
+         var a = aud * <%= @rate %>;
+         $("#answer").text(a.toString());
+      });
+   </script>
+</div>

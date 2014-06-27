@@ -1,0 +1,49 @@
+<div class="pageDiv">
+
+   <h1>Public Notice Board and Info Site</h1>
+
+   <p style="text-align:left">
+      Welcome, this site hosts some generally useful information.
+      Anyone is able to post something in the paragraph bellow 
+      and it will be seen by anyone who accesses the page.<br><br>
+      
+      We are also installing a bunch of useful services such as 
+      currency exchange calculators. See our links below.
+   </p>
+
+   <%= link_to 'AUD-USD Converter', converter_path %>
+   &nbsp; &nbsp; &nbsp;
+   <%= link_to 'What the?', what_path %>
+   
+   <hr>
+   <div class="noticeBoard">
+      <h3 id="title"><%= @info.title %></h3>
+      <div id="notice" style="width:400px; height:200px; text-align:left;">
+         <%= simple_format(@info.notice); %>
+      </div>
+
+      <hr>
+      <b>New Notice</b><br>
+      <textarea id="newNotice" style="width:400px; height:100px;"></textarea><br>
+      <button id="btn">Update</button>
+   </div>
+
+   <script>
+     
+      $("#btn").on("click", function(){
+         var str = $("#newNotice").val();
+         
+         $.ajax({
+            
+            type: "POST",
+            url:  "/updateField",
+            data: {field: "notice", val: str}
+            
+         }).done(function(){
+            location.reload();
+         });
+         
+      });
+   </script>
+
+</div>
